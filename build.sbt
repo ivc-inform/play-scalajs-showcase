@@ -2,7 +2,7 @@ import sbt.Project.projectToRef
 import play.PlayImport.PlayKeys._
 
 lazy val clients = Seq(exampleClient)
-lazy val scalaV = "2.11.7"
+lazy val scalaV = "2.12.4"
 
 //resolvers += "bintray/non" at "http://dl.bintray.com/non/maven"
 
@@ -43,7 +43,7 @@ lazy val exampleClient = (project in file("example-client")).settings(
     "com.lihaoyi" %%% "scalarx" % "0.2.8",
     "be.doeraene" %%% "scalajs-jquery" % "0.8.0",
     "com.lihaoyi" %%% "upickle" % "0.3.4",
-    "com.lihaoyi" %%% "utest" % "0.3.0" % "test"
+    "com.lihaoyi" %%% "utest" % "0.3.0" % Test
   )
 ).enablePlugins(ScalaJSPlugin, ScalaJSPlay).
   dependsOn(exampleSharedJs)
