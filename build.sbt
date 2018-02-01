@@ -16,18 +16,18 @@ lazy val exampleServer = (project in file("example-server")).settings(
     filters,
     jdbc,
     evolutions,
-    "com.michaelpollmeier" %% "gremlin-scala" % "3.1.0-incubating",
-    "org.neo4j" % "neo4j-tinkerpop-api-impl" % "0.1-2.2",
-    "com.typesafe.play" %% "anorm" % "2.5.0",
-    "com.vmunier" %% "play-scalajs-scripts" % "0.3.0",
-    "com.typesafe.slick" %% "slick" % "3.0.2",
-    "com.typesafe.play" %% "play-slick" % "1.0.1",
-    "com.lihaoyi" %% "upickle" % "0.3.4",
-    "org.webjars" %% "webjars-play" % "2.4.0",
-    "org.webjars" % "bootstrap" % "3.3.5",
-    "org.webjars" % "jquery" % "2.1.4",
-    "org.webjars" % "font-awesome" % "4.4.0",
-    "com.lihaoyi" %% "utest" % "0.3.0" % "test"
+    "com.michaelpollmeier" %% "gremlin-scala" % "3.3.1.1",
+    "org.neo4j" % "neo4j-tinkerpop-api-impl" % "0.7-3.2.3",
+    "com.typesafe.play" %% "anorm" % "2.5.3",
+    "com.vmunier" %% "play-scalajs-scripts" % "1.1.1",
+    "com.typesafe.slick" %% "slick" % "3.2.1",
+    "com.typesafe.play" %% "play-slick" % "3.0.1",
+    "com.lihaoyi" %% "upickle" % "0.5.1",
+    "org.webjars" %% "webjars-play" % "2.6.3",
+    "org.webjars" % "bootstrap" % "4.0.0",
+    "org.webjars" % "jquery" % "3.3.1",
+    "org.webjars" % "font-awesome" % "5.0.6",
+    "com.lihaoyi" %% "utest" % "0.6.3" % "test"
   )
  ).enablePlugins(PlayScala).
   aggregate(clients.map(projectToRef): _*).
@@ -38,20 +38,20 @@ lazy val exampleClient = (project in file("example-client")).settings(
   persistLauncher := true,
   persistLauncher in Test := false,
   libraryDependencies ++= Seq(
-    "org.scala-js" %%% "scalajs-dom" % "0.8.1",
-    "com.lihaoyi" %%% "scalatags" % "0.5.2",
-    "com.lihaoyi" %%% "scalarx" % "0.2.8",
-    "be.doeraene" %%% "scalajs-jquery" % "0.8.0",
-    "com.lihaoyi" %%% "upickle" % "0.3.4",
-    "com.lihaoyi" %%% "utest" % "0.3.0" % Test
+    "org.scala-js" %%% "scalajs-dom" % "0.9.4",
+    "com.lihaoyi" %%% "scalatags" % "0.6.7",
+    "com.lihaoyi" %%% "scalarx" % "0.3.2",
+    "be.doeraene" %%% "scalajs-jquery" % "0.9.2",
+    "com.lihaoyi" %%% "upickle" % "0.5.1",
+    "com.lihaoyi" %%% "utest" % "0.6.3" % Test
   )
 ).enablePlugins(ScalaJSPlugin, ScalaJSPlay).
   dependsOn(exampleSharedJs)
 
 val exampleSharedJvmSettings = List(
   libraryDependencies ++= Seq(
-    "com.lihaoyi" %% "upickle" % "0.3.4",
-    "com.lihaoyi" %% "utest" % "0.3.0" % "test"
+    "com.lihaoyi" %% "upickle" % "0.5.1",
+    "com.lihaoyi" %% "utest" % "0.6.3" % "test"
   )
 )
 
@@ -68,8 +68,8 @@ val exampleShared = (crossProject.crossType(CrossType.Pure) in file("example-sha
   jvmSettings(exampleSharedJvmSettings: _*).
   jsSettings(
     libraryDependencies ++= Seq(
-      "com.lihaoyi" %%% "upickle" % "0.3.4",
-      "com.lihaoyi" %%% "utest" % "0.3.0" % "test"
+      "com.lihaoyi" %%% "upickle" % "0.5.1",
+      "com.lihaoyi" %%% "utest" % "0.6.3" % "test"
     )
   )
 
